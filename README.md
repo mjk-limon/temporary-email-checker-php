@@ -1,4 +1,4 @@
-# Spam Email Checker
+# Temporary (Spam) Email Checker
 
 A PHP service that validates email domains against whitelist and blacklist, with automatic disposable domain detection using our known database and UserCheck API.
 
@@ -73,9 +73,6 @@ Check cache integrity anytime:
 ```bash
 # Command line
 php configure.php verify
-
-# Or via web
-curl "http://localhost/index.php?action=verify"
 ```
 
 ### Rebuild Cache
@@ -105,10 +102,9 @@ When a new domain is validated via the API:
 cd /var/www/html/services-my/spam-email-checker
 ```
 
-2. Create required directories:
+2. Set permission to .cache directory:
 ```bash
-mkdir -p data .cache
-chmod 755 data .cache
+chmod 755 .cache
 ```
 
 3. Add your master domain lists to `data/`:
